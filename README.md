@@ -1,1 +1,1 @@
-# api-my-finnances
+# API que fornece recursos para criação de app de finanças.
