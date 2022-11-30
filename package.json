@@ -1,11 +1,13 @@
 {
-   "name": "apiMyFinnances",
+   "name": "api-my-finnances",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
    "scripts": {
       "dev": "ts-node-dev --ignore-watch node_modules --respawn src/app.ts",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-commonjs",
+      "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
+		"migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
    },
    "dependencies": {
       "cors": "^2.8.5",
