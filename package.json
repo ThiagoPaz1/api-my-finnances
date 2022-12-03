@@ -6,7 +6,7 @@
    "scripts": {
       "dev": "ts-node-dev --ignore-watch node_modules --respawn src/app.ts",
       "typeorm": "typeorm-ts-node-commonjs",
-      "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
+      "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/database/migrations/default",
       "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
    },
    "dependencies": {
