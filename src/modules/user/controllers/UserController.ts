@@ -1,9 +1,7 @@
 import { Request, Response } from "express"
 import bcrypt from "bcrypt"
 
-import { UserService } from "../services"
-
-const userService = new UserService
+import { userService } from "../services"
 
 export class UserController { 
   public async newUser(req: Request, res: Response) {

@@ -1,3 +1,3 @@
-import { userRouter } from './user'
+import { userRouter } from './userRouter'
 
 export { userRouter }

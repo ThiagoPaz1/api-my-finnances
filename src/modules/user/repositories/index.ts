@@ -1,2 +1,5 @@
 import { UserRepository } from './UserRepository'
-export { UserRepository }
+
+const userRepository = new UserRepository
+
+export { userRepository }

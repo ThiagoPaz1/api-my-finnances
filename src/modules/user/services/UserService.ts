@@ -1,10 +1,13 @@
+import { IUser } from "./../interfaces/user"
 import { CreateUserDto } from "./../dto/index"
-import { UserRepository } from "../repositories"
+import { userRepository } from "../repositories"
 
 export class UserService {
-  private userRepository = new UserRepository
-  
   public async createUser(dataUser: CreateUserDto): Promise<void> {
-    await this.userRepository.create(dataUser)  
+    await userRepository.create(dataUser)  
+  }
+
+  public async findByUserEmail(email: string): Promise<IUser> {
+    return await userRepository.getByEmail(email)
   }
 }
