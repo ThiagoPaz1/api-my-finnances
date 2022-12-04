@@ -1,14 +1,17 @@
 import express from 'express'
-import { AppDataSource } from "./data-source"
 import cors from 'cors'
 
-const app = express()
+import { AppDataSource } from "./data-source"
+import { userRouter } from './routers/index'
 
-app.use(cors())
-app.use(express.json())
+const app = express()
 
 AppDataSource.initialize()
 .then(() => console.log('Iniciado banco de dados!'))
 .catch(error => console.log(error))
+
+app.use(cors())
+app.use(express.json())
+app.use('/user', userRouter)
 
 app.listen(process.env.PORT)
