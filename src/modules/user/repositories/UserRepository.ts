@@ -5,7 +5,7 @@ import { CreateUserDto } from '../dto/index'
 export class UserRepository {
   private userRepository = AppDataSource.getRepository(User)
 
-  public async create(dataUser: CreateUserDto) {
+  public async create(dataUser: CreateUserDto): Promise<void> {
     await this.userRepository.save(dataUser)
   }
 }
