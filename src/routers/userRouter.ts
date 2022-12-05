@@ -7,4 +7,6 @@ const userRouter = Router()
 
 userRouter.post('/', validationFields, userController.newUser)
 
+userRouter.put('/', validationFields, userController.updateDataUser)
+
 export { userRouter }
