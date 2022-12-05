@@ -1,31 +1,28 @@
 {
-  "name": "api-my-finnances",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --ignore-watch node_modules --respawn src/index.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ThiagoPaz1/api-my-finnances.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ThiagoPaz1/api-my-finnances/issues"
-  },
-  "homepage": "https://github.com/ThiagoPaz1/api-my-finnances#readme",
-  "dependencies": {
-    "express": "^4.18.2",
-    "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.14",
-    "@types/uuid": "^8.3.4",
-    "typescript": "^4.8.4",
-    "ts-node-dev": "^2.0.0"
-  }
+   "name": "api-my-finnances",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "type": "commonjs",
+   "scripts": {
+      "dev": "ts-node-dev --ignore-watch node_modules --respawn src/app.ts",
+      "typeorm": "typeorm-ts-node-commonjs",
+      "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/database/migrations/default",
+      "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
+   },
+   "dependencies": {
+      "bcrypt": "^5.1.0",
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "pg": "^8.4.0",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.3.10"
+   },
+   "devDependencies": {
+      "@types/bcrypt": "^5.0.0",
+      "@types/express": "^4.17.14",
+      "@types/node": "^16.11.10",
+      "ts-node-dev": "^2.0.0",
+      "typescript": "4.5.2"
+   }
 }
