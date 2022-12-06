@@ -14,7 +14,7 @@ services:
     volumes:
       - pgdata:/data/postgres
     network_mode: host
-  app: 
+  app:
     build: .
     container_name: apimyfinnances
     ports:
