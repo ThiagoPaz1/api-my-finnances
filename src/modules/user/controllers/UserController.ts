@@ -20,4 +20,8 @@ export class UserController {
       return res.status(500).send(error)
     }
   }
+
+  public async updateDataUser(req: Request, res: Response) {
+    
+  }
 } 

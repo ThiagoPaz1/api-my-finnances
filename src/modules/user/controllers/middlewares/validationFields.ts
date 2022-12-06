@@ -7,13 +7,13 @@ export const validationFields = async (req: Request, res: Response, next: NextFu
   const validEmail = /\S+@\S+\.\S+/
   const checkValuesInDb = await userService.findByUserEmail(email)
 
-  if (checkValuesInDb.email === email || checkValuesInDb.email === name) {
-    return res.status(400).send('Nome ou email já cadastrados')
+  if (checkValuesInDb) {
+    return res.status(400).send('Email já cadastrados')
   } 
 
-  if (name.length < 3) return res.status(400).send('Nome tem que ter no mínimo 3 caracteres')
-
   if (!validEmail.test(email)) return res.status(400).send('Email inválido')
+
+  if (name.length < 3) return res.status(400).send('Nome tem que ter no mínimo 3 caracteres')
 
   next()
 }

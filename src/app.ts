@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 
 import { AppDataSource } from "./data-source"
-import { userRouter } from './routers/index'
+import { router } from './routers/index'
 
 const app = express()
 
@@ -12,6 +12,6 @@ AppDataSource.initialize()
 
 app.use(cors())
 app.use(express.json())
-app.use('/user', userRouter)
+app.use('/', router)
 
 app.listen(process.env.PORT)

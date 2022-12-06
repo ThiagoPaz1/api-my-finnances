@@ -1,5 +1,5 @@
 import { IUser } from "./../interfaces/user"
-import { CreateUserDto } from "./../dto/index"
+import { CreateUserDto, UpdateUserDto } from "./../dto/index"
 import { userRepository } from "../repositories"
 
 export class UserService {
@@ -9,5 +9,9 @@ export class UserService {
 
   public async findByUserEmail(email: string): Promise<IUser> {
     return await userRepository.getByEmail(email)
+  }
+
+  public async updateUser(dataUpdateUser: UpdateUserDto): Promise<void> {
+    return await userRepository.update(dataUpdateUser)
   }
 }
