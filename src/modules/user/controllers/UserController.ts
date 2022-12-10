@@ -22,6 +22,20 @@ export class UserController {
   }
 
   public async updateDataUser(req: Request, res: Response) {
-    
+    const { id } = req.params
+    const { name, email } = req.body
+
+
+    try {
+      await userService.updateUser({
+        id: Number(id),
+        name: name,
+        email: email,
+      })
+
+      return res.status(201).send('Atualizado com sucesso!')
+    } catch (error) {
+      return res.status(500).send(error)
+    }
   }
 } 
