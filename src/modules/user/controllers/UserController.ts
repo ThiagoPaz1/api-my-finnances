@@ -3,7 +3,22 @@ import bcrypt from "bcrypt"
 
 import { userService } from "../services"
 
-export class UserController { 
+export class UserController {
+  public async getUser(req: Request, res: Response) {
+    const { id } = req.params
+
+    try {
+      const user = await userService.findByUserId(Number(id))
+      return  res.status(200).json({
+        id: user.id,
+        name: user.name,
+        email: user.email
+      })
+    } catch (error) {
+      return res.status(500).send(error)
+    }
+  }
+
   public async newUser(req: Request, res: Response) {
     const { name, email, password } = req.body
     const encryptedPassword = await bcrypt.hash(password, 10)
