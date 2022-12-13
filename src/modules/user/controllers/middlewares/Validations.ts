@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express"
 
-import { userService } from '../../services'
+import { userService } from "../../services"
 
 export class Validations {
   public async validationFields(req: Request, res: Response, next: NextFunction) {
