@@ -1,5 +1,5 @@
-import { ValidationsLogin } from "./ValidationsLogin"
+import { ValidationsLogin } from "./ValidationLogin"
 
-const validationsLogin = new ValidationsLogin
+const validationLogin = new ValidationsLogin
 
-export { validationsLogin }
+export { validationLogin }
