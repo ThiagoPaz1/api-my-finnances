@@ -11,6 +11,10 @@ export class UserService {
     return await userRepository.getByEmail(email)
   }
 
+  public async findByUserId(id: number): Promise<IUser> {
+    return await userRepository.getById(id)
+  }
+
   public async updateUser(dataUpdateUser: UpdateUserDto): Promise<void> {
     return await userRepository.update(dataUpdateUser)
   }
