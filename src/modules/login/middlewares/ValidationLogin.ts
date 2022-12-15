@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 import { userService } from "../../user/services"
 
