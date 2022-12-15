@@ -1,14 +1,12 @@
 import { Router } from "express"
 
 import { userController } from "../modules/user/controllers"
-import { validations } from "../modules/user/controllers/middlewares"
+import { validationFields } from "../modules/user/controllers/middlewares/validationFields"
 
 const userRouter = Router()
 
-userRouter.get('/:id', validations.validationId, userController.getUser)
+userRouter.post('/', validationFields, userController.newUser)
 
-userRouter.post('/', validations.validationFields, userController.newUser)
-
-userRouter.put('/:id', validations.validationId, userController.updateDataUser)
+userRouter.put('/', validationFields, userController.updateDataUser)
 
 export { userRouter }
