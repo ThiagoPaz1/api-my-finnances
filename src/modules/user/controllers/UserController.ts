@@ -31,7 +31,7 @@ export class UserController {
         password: encryptedPassword
       })
 
-      return res.status(201).send('Criado com sucesso!')
+      return res.status(201).send("Criado com sucesso!")
     } catch (error) {
       return res.status(500).send(error)
     }
@@ -40,7 +40,6 @@ export class UserController {
   public async updateDataUser(req: Request, res: Response) {
     const { id } = req.params
     const { name, email } = req.body
-
 
     try {
       await userService.updateUser({

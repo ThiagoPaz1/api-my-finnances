@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm"
+import { User } from "./User"
 
 @Entity()
 export class Balance {
@@ -6,5 +7,9 @@ export class Balance {
   id: number
 
   @Column()
-  balance: number  
+  balance: number
+
+  @OneToOne(() => User)
+  @JoinColumn()
+  user: User
 }
