@@ -5,7 +5,7 @@ import { UpdateBalanceDto } from "../dto"
 export class BalanceRepository {
   private balanceRepository = AppDataSource.getRepository(Balance)
 
-  public async update(dataUpdateBalance: UpdateBalanceDto): Promise<void> {
-    await this.balanceRepository.save(dataUpdateBalance)
+  public async update(dataUpdateBalance: UpdateBalanceDto): Promise<void | any> {
+    return await this.balanceRepository.save(dataUpdateBalance)
   }
 }

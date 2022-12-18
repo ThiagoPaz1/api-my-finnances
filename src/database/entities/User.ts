@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm"
-
 import { Balance } from "./Balance"
 
 @Entity()
@@ -15,8 +14,8 @@ export class User {
 
   @Column()
   password: string
-
-  @OneToOne(() => Balance)
+  
+  @OneToOne(() => Balance, (balance) => balance.user)
   @JoinColumn()
   balance: Balance
 }

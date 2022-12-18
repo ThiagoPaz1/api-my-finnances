@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 import bcrypt from "bcryptjs"
 
 import { userService } from "../services"
+import { balanceService } from "../../balance/service"
 
 export class UserController {
   public async getUser(req: Request, res: Response) {
@@ -25,10 +26,13 @@ export class UserController {
     const encryptedPassword = await bcrypt.hash(password, 10)
 
     try {
+      const balance = await balanceService.updateBalance({balance: 0})
+
       await userService.createUser({
         name: name,
         email: email,
-        password: encryptedPassword
+        password: encryptedPassword,
+        balance: await balance?.id
       })
 
       return res.status(201).send("Criado com sucesso!")

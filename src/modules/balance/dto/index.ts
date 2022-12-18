@@ -1,4 +1,7 @@
+import { User } from "../../../database/entities/User"
+
 export interface UpdateBalanceDto {
+  id?: number
   balance: number
-  userId: number
+  user?: User
 }
