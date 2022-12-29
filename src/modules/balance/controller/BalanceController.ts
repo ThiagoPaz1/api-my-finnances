@@ -3,7 +3,7 @@ import { balanceService } from "../service"
 
 export class BalanceController {
   public async updateBalance(req: Request, res: Response) {
-    const { balance, id} = req.body
+    const { balance, id } = req.body
 
     try {
       await balanceService.updateBalance({
