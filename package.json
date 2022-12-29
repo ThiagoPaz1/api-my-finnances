@@ -10,6 +10,7 @@
       "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
    },
    "dependencies": {
+      "@vercel/node": "^2.8.2",
       "bcryptjs": "^2.4.3",
       "cors": "^2.8.5",
       "dotenv": "^16.0.3",

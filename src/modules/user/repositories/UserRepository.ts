@@ -14,6 +14,10 @@ export class UserRepository {
     return await this.userRepository.findOneBy({ email: email })
   }
 
+  public async getById(id: number): Promise<IUser> {
+    return await this.userRepository.findOneBy({ id: id })
+  }
+
   public async update(dataUpdateUser: UpdateUserDto): Promise<void> {
     await this.userRepository.save(dataUpdateUser)
   }
